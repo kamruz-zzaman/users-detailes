@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Users from './Users';
 import './user.css'
+import { Outlet } from 'react-router-dom';
 import avater from '../../Images/avater.png'
 
 const UserFetch = () => {
@@ -10,37 +11,27 @@ const UserFetch = () => {
             .then(res => res.json())
             .then(data => setUsers(data))
     }, [])
+
     return (
         <>
-            <div className='container w-75  mx-auto d-flex'>
-                <div className=' m-5 divWidth '>
-                    <h4 className='usersList'>USERS LIST</h4>
-                    {/* <img className='border' src="../../Images/avater.png" alt="" /> */}
-                    {
-                        users.map(user => (
-                            <Users
-                                key={user.id}
-                                users={user}
-                            ></Users>
-                        ))
-                    }
-                </div>
-                <div className='divWidth m-5 '>
-                    <h4 className='usersList'>USER DETAILS</h4>
-                    <img width="15%" className='mt-3' src={avater} alt="" /><br />
-                    <h3>name</h3>
-                    <textarea name="" id="" cols="30" rows="3"></textarea><br />
-                    <div className='mt-4 '>
-                        <span className='inputTitle'>Full name: </span><br />
-                        <input className='w-75' type="text" name="" id="" />
+            <div className='container'>
+                <div className='d-flex main'>
+                    <div className=' m-5 divWidth '>
+                        <h4 className='usersList py-1'>USERS LIST</h4>
+                        {/* <img className='border' src="../../Images/avater.png" alt="" /> */}
+                        {
+                            users.map(user => (
+                                <Users
+                                    key={user.id}
+                                    users={user}
+                                ></Users>
+                            ))
+                        }
                     </div>
-                    <div className='mt-2'>
-                        <span className='inputTitle2'>Job Title: </span><br />
-                        <input className='w-75' type="text" name="" id="" />
-                    </div>
-                    <div className='mt-2'>
-                        <span className='inputTitle3'>Email: </span><br />
-                        <input className='w-75' type="text" name="" id="" />
+                    <div className='divWidth m-5 '>
+                        <h4 className='usersList py-1'>USER DETAILS</h4>
+                        <img width="15%" className='mt-3' src={avater} alt="" /><br />
+                        <Outlet></Outlet>
                     </div>
                 </div>
             </div>

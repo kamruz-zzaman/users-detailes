@@ -1,4 +1,6 @@
-
+.main{
+    margin-left: 150px;
+}
 .divWidth{
     width: 30%;
 }
@@ -10,11 +12,18 @@
     color: black;
     background-color: #ECECEC;
 }
+.userBg{
+    background-color: #ECECEC;
+}
+.userBg:hover{
+    background-color: #D4D4D4;
+    color: black;
+}
 .inputTitle{
-    margin-right: 160px;
+    margin-right: 150px;
 }
 .inputTitle2{
-    margin-right: 170px;
+    margin-right: 160px;
 }
 .inputTitle3{
     margin-right: 180px;
