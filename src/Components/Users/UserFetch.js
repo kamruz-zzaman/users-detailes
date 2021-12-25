@@ -12,7 +12,7 @@ const UserFetch = () => {
     }, [])
     return (
         <>
-            <div className='fds d-flex'>
+            <div className='container w-75  mx-auto d-flex'>
                 <div className=' m-5 divWidth '>
                     <h4 className='usersList'>USERS LIST</h4>
                     {/* <img className='border' src="../../Images/avater.png" alt="" /> */}
@@ -32,15 +32,15 @@ const UserFetch = () => {
                     <textarea name="" id="" cols="30" rows="3"></textarea><br />
                     <div className='mt-4 '>
                         <span className='inputTitle'>Full name: </span><br />
-                        <input className='w-50' type="text" name="" id="" />
+                        <input className='w-75' type="text" name="" id="" />
                     </div>
                     <div className='mt-2'>
                         <span className='inputTitle2'>Job Title: </span><br />
-                        <input className='w-50' type="text" name="" id="" />
+                        <input className='w-75' type="text" name="" id="" />
                     </div>
                     <div className='mt-2'>
                         <span className='inputTitle3'>Email: </span><br />
-                        <input className='w-50' type="text" name="" id="" />
+                        <input className='w-75' type="text" name="" id="" />
                     </div>
                 </div>
             </div>
