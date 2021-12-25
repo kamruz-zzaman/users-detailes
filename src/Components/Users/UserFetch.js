@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Users from './Users';
 import './user.css'
-// import { Outlet } from 'react-router-dom';
 import avater from '../../Images/avater.png'
-import { useParams } from 'react-router-dom';
+import UserDetailFetch from '../UserDetails/UserDetailFetch';
 
 const UserFetch = () => {
-    const { user } = useParams();
     const [users, setUsers] = useState([]);
     const [userr, setUserr] = useState([])
     useEffect(() => {
@@ -20,14 +18,12 @@ const UserFetch = () => {
             .then(res => res.json())
             .then(data => setUserr(data))
     }
-    const { Bio, avatar, jobTitle, profile } = userr;
     return (
         <>
             <div className='container'>
                 <div className='d-flex main'>
                     <div className=' m-5 divWidth '>
                         <h4 className='usersList py-1'>USERS LIST</h4>
-                        {/* <img className='border' src="../../Images/avater.png" alt="" /> */}
                         {
                             users.map(user => (
                                 <Users
@@ -41,21 +37,10 @@ const UserFetch = () => {
                     <div className='divWidth m-5 '>
                         <h4 className='usersList py-1'>USER DETAILS</h4>
                         <img width="15%" className='mt-3' src={avater} alt="" /><br />
-                        {/* <Outlet></Outlet> */}
-                        <p className='mt-1 fw-bold'>@{profile.username}</p>
-                        <textarea defaultValue={Bio} className='px-1' name="" id="" cols="30" rows="3"></textarea><br />
-                        <div className='mt-4 '>
-                            <span className='inputTitle'>Full name: </span><br />
-                            <input value={`${profile.firstName} ${profile.lastName}`} className='w-75 p-1' type="text" name="" id="" />
-                        </div>
-                        <div className='mt-2'>
-                            <span className='inputTitle2'>Job Title: </span><br />
-                            <input value={jobTitle} className='w-75 p-1' type="text" name="" id="" />
-                        </div>
-                        <div className='mt-2'>
-                            <span className='inputTitle3'>Email: </span><br />
-                            <input value={profile.email} className='w-75 p-1' type="text" name="" id="" />
-                        </div>
+                        <UserDetailFetch
+                            userr={userr}
+                        >
+                        </UserDetailFetch>
                     </div>
                 </div>
             </div>
