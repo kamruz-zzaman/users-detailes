@@ -42,19 +42,19 @@ const UserFetch = () => {
                         <h4 className='usersList py-1'>USER DETAILS</h4>
                         <img width="15%" className='mt-3' src={avater} alt="" /><br />
                         {/* <Outlet></Outlet> */}
-                        <h3>{ }</h3>
-                        <textarea defaultValue={Bio} name="" id="" cols="30" rows="3"></textarea><br />
+                        <p className='mt-1 fw-bold'>@{profile.username}</p>
+                        <textarea defaultValue={Bio} className='px-1' name="" id="" cols="30" rows="3"></textarea><br />
                         <div className='mt-4 '>
                             <span className='inputTitle'>Full name: </span><br />
-                            <input className='w-75 py-1' type="text" name="" id="" />
+                            <input value={`${profile.firstName} ${profile.lastName}`} className='w-75 p-1' type="text" name="" id="" />
                         </div>
                         <div className='mt-2'>
                             <span className='inputTitle2'>Job Title: </span><br />
-                            <input defaultValue={jobTitle} className='w-75 py-1' type="text" name="" id="" />
+                            <input value={jobTitle} className='w-75 p-1' type="text" name="" id="" />
                         </div>
                         <div className='mt-2'>
                             <span className='inputTitle3'>Email: </span><br />
-                            <input className='w-75 py-1' type="text" name="" id="" />
+                            <input value={profile.email} className='w-75 p-1' type="text" name="" id="" />
                         </div>
                     </div>
                 </div>
