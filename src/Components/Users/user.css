@@ -1,0 +1,26 @@
+
+.divWidth{
+    width: 30%;
+}
+.usersList{
+    background-color: #C5DFFF;
+}
+.link{
+    text-decoration: none;
+    color: black;
+    background-color: #ECECEC;
+}
+.inputTitle{
+    margin-right: 160px;
+}
+.inputTitle2{
+    margin-right: 170px;
+}
+.inputTitle3{
+    margin-right: 180px;
+}
+input,textarea{
+    background-color: #DBDBDB;
+    border: 1px solid black;
+    border-radius: 5px;
+}
