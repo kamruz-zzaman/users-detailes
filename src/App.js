@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import UserDetails from './Components/UserDetails/UserDetails';
+// import UserDetails from './Components/UserDetails/UserDetails';
 import UserFetch from './Components/Users/UserFetch';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<UserFetch />}>
-            <Route path=":user" element={<UserDetails />} />
+            {/* <Route path="/:user" element={<UserDetails />} /> */}
           </Route>
         </Routes>
       </BrowserRouter>

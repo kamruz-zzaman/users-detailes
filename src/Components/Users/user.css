@@ -10,10 +10,10 @@
 .link{
     text-decoration: none;
     color: black;
-    background-color: #ECECEC;
 }
 .userBg{
-    background-color: #ECECEC;
+    background-color: #ECECEC ;
+    border: none;
 }
 .userBg:hover{
     background-color: #D4D4D4;

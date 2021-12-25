@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-const Users = ({ users }) => {
+const Users = ({ users, handleUser }) => {
     const { id, avatar, profile } = users;
+
     return (
         <div>
-            <Link to={`/${id}`} className='link'><p className='userBg py-2 mt-3'>{profile.firstName} {profile.lastName}</p></Link>
+            <button onClick={() => handleUser(id)} className='userBg py-2 mt-3 w-100'>{profile.firstName} {profile.lastName}</button>
 
         </div>
     );
