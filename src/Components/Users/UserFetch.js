@@ -37,10 +37,12 @@ const UserFetch = () => {
                     <div className='divWidth m-5 '>
                         <h4 className='usersList py-1'>USER DETAILS</h4>
                         <img width="15%" className='mt-3' src={avater} alt="" /><br />
-                        <UserDetailFetch
-                            userr={userr}
-                        >
-                        </UserDetailFetch>
+                        {
+                            userr ? <UserDetailFetch
+                                key={userr.id}
+                                user={userr}
+                            /> : null
+                        }
                     </div>
                 </div>
             </div>
