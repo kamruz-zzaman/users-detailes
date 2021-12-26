@@ -13,10 +13,12 @@ const UserFetch = () => {
         axios.get("https://602e7c2c4410730017c50b9d.mockapi.io/users").then((res) => {
             setUsers(res.data);
             setIsLoading(false)
+            if (!res) {
+                alert("No data to show")
+            }
             if (res.statusText !== "OK") {
                 alert("Http request failed")
             }
-            console.log(res);
         });
     }, []);
 
