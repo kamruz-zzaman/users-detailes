@@ -3,20 +3,22 @@ import Users from './Users';
 import './user.css'
 import avater from '../../Images/avater.png'
 import UserDetailFetch from '../UserDetails/UserDetailFetch';
+import axios from 'axios';
 
 const UserFetch = () => {
     const [users, setUsers] = useState([]);
     const [userr, setUserr] = useState([])
+
     useEffect(() => {
-        fetch("https://602e7c2c4410730017c50b9d.mockapi.io/users")
-            .then(res => res.json())
-            .then(data => setUsers(data))
-    }, [])
+        axios.get("https://602e7c2c4410730017c50b9d.mockapi.io/users").then((res) => {
+            setUsers(res.data);
+        });
+    }, []);
 
     const handleUser = (id) => {
-        fetch(`https://602e7c2c4410730017c50b9d.mockapi.io/users/${id}`)
-            .then(res => res.json())
-            .then(data => setUserr(data))
+        axios.get(`https://602e7c2c4410730017c50b9d.mockapi.io/users/${id}`).then((res) => {
+            setUserr(res.data);
+        });
     }
     return (
         <>
@@ -38,7 +40,7 @@ const UserFetch = () => {
                         <h4 className='usersList py-1'>USER DETAILS</h4>
                         <img width="15%" className='mt-3' src={avater} alt="" /><br />
                         {
-                            userr ? <UserDetailFetch
+                            userr.id ? <UserDetailFetch
                                 key={userr.id}
                                 user={userr}
                             /> : null
